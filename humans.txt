@@ -1,0 +1,10 @@
+/* TEAM */
+Company: Essential Marketing
+Site: https://marketingsvc.com
+Contact: (786) 253-7699
+
+/* SITE */
+Title: Licenses in Florida
+Standards: HTML5, CSS3
+Components: Static multi-page site for Florida clinic licensing & staffing
+Language: English
