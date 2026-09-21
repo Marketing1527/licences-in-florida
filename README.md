@@ -1,63 +1,53 @@
-# Licensing Florida — Site Rebuild
+# Licences in Florida
 
-Clean rebuild of the saved theme export into a **Licensing Florida** website for clinics and medical locations.
+Private backup of the public website and admin console. This repo is **not** connected to Vercel, so pushes do not change https://licencesinflorida.com.
 
-## Quick Start
+## Folders
 
-Open the site locally:
+```
+site/    Public website (HTML/CSS)
+admin/   Operations console (Next.js)
+```
+
+## Run locally
+
+Website:
 
 ```bash
 cd site
 python3 -m http.server 8080
 ```
 
-Then visit: http://localhost:8080
+Admin:
 
-Or simply open `site/index.html` in your browser.
-
-## Project Structure
-
-```
-site/
-├── index.html              # Main landing page
-├── css/styles.css          # Clean, responsive styles
-├── js/main.js              # Mobile menu, FAQ, contact form
-├── assets/images/          # Healthcare images from original theme
-└── content/
-    └── licensing-checklist.md   # Organized licensing steps from your notes
-
-_archive/original-export/   # Old saved NP Collaborator files (tracking scripts, minified bundles)
+```bash
+cd admin
+npm install
+npm run dev
 ```
 
-## What Changed
+Then open http://localhost:8080 and http://localhost:3000/admin/login.
 
-| Before | After |
-|--------|-------|
-| Messy browser save of NP Collaborator | Clean Licensing Florida branding |
-| 22+ tracking/analytics scripts | Zero third-party scripts |
-| Minified React bundle (not editable) | Simple HTML/CSS you can edit |
-| UUID image filenames | Organized `assets/images/` folder |
-| Empty placeholder files | Removed to `_archive/` |
+## Submit a change from another computer (pull request)
 
-## Your Licensing Content (Organized)
+1. Ask the repo owner to invite your GitHub username as a collaborator.
+2. Clone the repo and create a branch — do not commit straight to `main`:
 
-**Step 1 — Business:** Certificate of Use, WASD, DERM, Miami-Dade Business Tax (LBT), Municipal COU
+```bash
+git clone https://github.com/Marketing1527/licences-in-florida.git
+cd licences-in-florida
+git checkout -b your-name/short-description
+```
 
-**Step 2 — Medical Clinic:** HCA Standard/Exempt, Medicare, Medicaid, CLIA Lab, additional licenses & staffing
+3. Make your edits, then commit and push the branch:
 
-Full details: `site/content/licensing-checklist.md`
+```bash
+git add -A
+git commit -m "Describe why you made the change"
+git push -u origin HEAD
+```
 
-## Next Steps for You
+4. Open a pull request: https://github.com/Marketing1527/licences-in-florida/compare
+5. The owner reviews it and merges. Only a merge to `main` should be treated as approved.
 
-1. Replace placeholder email (`info@licensingflorida.com`) with your real contact
-2. Add your logo (replace the "LF" text mark in the header)
-3. Connect the contact form to a backend (Formspree, Netlify Forms, etc.)
-4. Deploy to Vercel, Netlify, or any static host
-
-## Design Notes
-
-Visual style inspired by the original theme:
-- Primary blue: `#4052FF`
-- Accent: `#00A3FF`
-- Success green: `#22C55E`
-- Clean healthcare aesthetic with gradient hero
+Never commit `.env.local`, passwords, or `node_modules`.
